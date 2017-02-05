@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_case"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.ayanshah.docinfo.AddCase">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollV1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/relLay1"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_height="300dp">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/name"
+            android:layout_below="@+id/caseNum"
+            android:layout_alignLeft="@+id/caseNum"
+            android:layout_alignStart="@+id/caseNum"
+            android:hint="Name" />
+
+            <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/caseNum"
+            android:hint="Case Number"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+            <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/email"
+            android:hint="Email"
+            android:layout_alignBaseline="@+id/name"
+            android:layout_alignBottom="@+id/name"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/name"
+            android:layout_toEndOf="@+id/name" />
+
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/ref"
+                android:hint="Ref"
+                android:layout_alignBaseline="@+id/sex"
+                android:layout_alignBottom="@+id/sex"
+                android:layout_toRightOf="@+id/sex"
+                android:layout_toEndOf="@+id/sex" />
+
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/date"
+                android:hint="Date"
+                android:layout_alignBaseline="@+id/ref"
+                android:layout_alignBottom="@+id/ref"
+                android:layout_toRightOf="@+id/ref"
+                android:layout_toEndOf="@+id/ref" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/address"
+                android:hint="Address"
+                android:layout_below="@+id/age"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/phone"
+                android:hint="Phone"
+                android:layout_below="@+id/address"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/complaints"
+                android:hint="Complaints"
+                android:layout_below="@+id/phone"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/age"
+                android:hint="Age"
+                android:layout_width="80dp"
+                android:layout_alignBaseline="@+id/sex"
+                android:layout_alignBottom="@+id/sex"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/sex"
+                android:hint="Sex"
+                android:layout_below="@+id/name"
+                android:layout_toRightOf="@+id/age"
+                android:layout_toEndOf="@+id/age" />
+
+            />
+
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/relLay2"
+            android:layout_below="@+id/relLay1">
+
+            <TextView
+                android:text="Opthalmic Examinations "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/textView" />
+
+            <TextView
+                android:text="Vn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/textView7" />
+
+            <TextView
+                android:text="Tn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                android:layout_below="@+id/textView8"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="41dp" />
+
+            <TextView
+                android:text="P/H"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView8"
+                android:layout_marginTop="32dp"
+                android:layout_below="@+id/textView7"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+
+            <EditText
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/oeR2"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/textView8"
+                android:layout_alignLeft="@+id/textView3"
+                android:layout_alignStart="@+id/textView3"
+                android:layout_above="@+id/oeR3"
+                android:layout_width="70dp"
+                android:hint="X" />
+
+            <EditText
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/oeL3"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/oeL2"
+                android:layout_alignStart="@+id/oeL2"
+                android:layout_alignBottom="@+id/oeR3"
+                android:layout_alignTop="@+id/oeR3"
+                android:layout_width="70dp"
+                android:hint="X" />
+
+            <EditText
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/oeL1"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView4"
+                android:layout_alignLeft="@+id/textView4"
+                android:layout_alignStart="@+id/textView4"
+                android:layout_above="@+id/oeL2"
+                android:layout_width="70dp"
+                android:hint="X" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:id="@+id/oeR1"
+                android:layout_alignLeft="@+id/textView3"
+                android:layout_alignStart="@+id/textView3"
+                android:layout_above="@+id/oeR2"
+                android:hint="X" />
+
+            <TextView
+                android:text="L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                android:layout_marginRight="69dp"
+                android:layout_marginEnd="69dp"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <EditText
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/oeR3"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/textView9"
+                android:layout_alignLeft="@+id/oeR2"
+                android:layout_alignStart="@+id/oeR2"
+                android:layout_alignParentBottom="true"
+                android:layout_width="70dp"
+                android:hint="X" />
+
+            <EditText
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/oeL2"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/oeL1"
+                android:layout_alignStart="@+id/oeL1"
+                android:layout_alignBottom="@+id/oeR2"
+                android:layout_alignTop="@+id/oeR2"
+                android:layout_width="70dp"
+                android:hint="X" />
+
+            <TextView
+                android:text="R"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_below="@+id/textView"
+                android:layout_alignRight="@+id/textView"
+                android:layout_alignEnd="@+id/textView"
+                android:layout_marginRight="36dp"
+                android:layout_marginEnd="36dp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:id="@+id/relLay3"
+            android:layout_below="@+id/relLay2">
+
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/asR4"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_below="@+id/asR3"
+                android:layout_alignLeft="@+id/asR3"
+                android:layout_alignStart="@+id/asR3"
+                android:hint="X"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="K2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/K2text"
+                android:layout_below="@+id/K1text"
+                android:layout_alignLeft="@+id/K1text"
+                android:layout_alignStart="@+id/K1text"
+                android:layout_marginBottom="20dp" />
+
+            <EditText
+                android:layout_height="100dp"
+
+                android:ems="10"
+                android:id="@+id/reUG"
+                android:layout_below="@+id/refrtext"
+                android:layout_alignLeft="@+id/refrtext"
+                android:layout_alignStart="@+id/refrtext"
+                android:layout_width="100dp"
+                android:inputType="textMultiLine"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:text="Funds :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sLamp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="17dp"
+                android:id="@+id/fundstext" />
+
+            <TextView
+                android:text="Adv. / Treatment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/fundstext"
+                android:layout_alignLeft="@+id/reUG"
+                android:layout_alignStart="@+id/reUG"
+                android:id="@+id/advtext" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:layout_below="@+id/fundstext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/fnds"
+                android:layout_toStartOf="@+id/csAdd"
+                android:layout_alignRight="@+id/sLamp"
+                android:layout_alignEnd="@+id/sLamp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <Button
+                android:text="Add"
+                android:id="@+id/csAdd"
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/advTr"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:text="A - Scan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/astext"
+                android:textAlignment="center"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:text="K1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/K1text"
+                android:layout_below="@+id/aRtext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:text="L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/aLtext"
+                android:layout_marginRight="104dp"
+                android:layout_marginEnd="104dp"
+                android:layout_alignBaseline="@+id/aRtext"
+                android:layout_alignBottom="@+id/aRtext"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <TextView
+                android:text="R"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/aRtext"
+                android:layout_marginLeft="46dp"
+                android:layout_marginStart="46dp"
+                android:layout_below="@+id/astext"
+                android:layout_toRightOf="@+id/slittext"
+                android:layout_toEndOf="@+id/slittext" />
+
+            <TextView
+                android:text="Axl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/K2text"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/Axltext"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:text="10L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/text10L"
+                android:layout_below="@+id/Axltext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="20dp" />
+
+            <TextView
+                android:text="Refraction / u / g :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/refrtext"
+                android:layout_above="@+id/sLamp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="61dp"
+                android:layout_marginEnd="61dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/advTr"
+                android:layout_height="100dp"
+                android:layout_below="@+id/advtext"
+                android:layout_alignLeft="@+id/advtext"
+                android:layout_alignStart="@+id/advtext"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <EditText
+                android:layout_height="100dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+
+                android:layout_width="wrap_content"
+                android:id="@+id/sLamp"
+                android:layout_below="@+id/slittext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/reUG"
+                android:layout_toStartOf="@+id/reUG"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:text="A="
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textaequals"
+                android:layout_below="@+id/text10L"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/asL1"
+                android:layout_below="@+id/aLtext"
+                android:layout_alignRight="@+id/advtext"
+                android:layout_alignEnd="@+id/advtext"
+                android:layout_alignBottom="@+id/asR1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:hint="X"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/asL2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_below="@+id/asL1"
+                android:layout_alignLeft="@+id/asL1"
+                android:layout_alignStart="@+id/asL1"
+                android:hint="X"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/asL3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_above="@+id/text10L"
+                android:layout_alignLeft="@+id/asL2"
+                android:layout_alignStart="@+id/asL2"
+                android:hint="X"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/asL4"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_below="@+id/asL3"
+                android:layout_alignLeft="@+id/asL3"
+                android:layout_alignStart="@+id/asL3"
+                android:hint="X"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/asR2"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_below="@+id/asR1"
+                android:layout_alignLeft="@+id/asR1"
+                android:layout_alignStart="@+id/asR1"
+                android:hint="X"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/asR3"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_below="@+id/asR2"
+                android:layout_alignLeft="@+id/asR2"
+                android:layout_alignStart="@+id/asR2"
+                android:hint="X"
+                android:textAlignment="center" />
+
+            <TextView
+                android:text="Slit-lamp :"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/slittext"
+                android:layout_below="@+id/textaequals"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="67dp" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/asR5"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_below="@+id/asL4"
+                android:layout_alignLeft="@+id/asR3"
+                android:layout_alignStart="@+id/asR3"
+                android:hint="X"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/asL5"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:layout_below="@+id/asL4"
+                android:layout_alignLeft="@+id/asL4"
+                android:layout_alignStart="@+id/asL4"
+                android:hint="X"
+                android:textAlignment="center" />
+
+            <EditText
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:id="@+id/asR1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textAlignment="center"
+                android:layout_below="@+id/aRtext"
+                android:layout_toLeftOf="@+id/refrtext"
+                android:layout_toStartOf="@+id/refrtext"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="X" />
+
+
+        </RelativeLayout>>
+    </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -42,8 +42,8 @@ DBinfo dBinfo;
                             Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Intent intent = new Intent(getApplicationContext(), ViewCase.class);
-                    intent.putExtra("caseno", caseNum.getText().toString());
+                    Intent intent = new Intent(getApplicationContext(), SearchList.class);
+                    intent.putExtra("name", caseNum.getText().toString());
                     startActivity(intent);
                 }
             }

@@ -21,6 +21,7 @@ public class ViewCase extends AppCompatActivity {
     EditText address;
     EditText phone;
     EditText complaints;
+    EditText email;
 
     EditText oeR1;
     EditText oer2;
@@ -55,6 +56,7 @@ public class ViewCase extends AppCompatActivity {
         csAdd.setVisibility(View.INVISIBLE);
         caseNum = (EditText)findViewById(R.id.caseNum);
         name = (EditText)findViewById(R.id.name);
+        email = (EditText)findViewById(R.id.email);
         age = (EditText)findViewById(R.id.age);
         sex = (EditText)findViewById(R.id.sex);
         ref = (EditText)findViewById(R.id.ref);
@@ -86,17 +88,17 @@ public class ViewCase extends AppCompatActivity {
 
 
         mydb = new DBinfo(this);
-        String caseno = getIntent().getStringExtra("caseno");
-        Log.d("tag2",caseno);
-        Cursor values = mydb.getBasicData(caseno);
+        String caseId = getIntent().getStringExtra("id");
+        Log.d("tag2",caseId);
+        Cursor values = mydb.getBasicData(caseId);
         values.moveToFirst();
         int count = values.getCount();
-        Log.d("tag4",caseno);
+        Log.d("tag4",caseId);
         if(count>0) {
-            Cursor specificValues = mydb.getSpecificData(caseno);
+            Cursor specificValues = mydb.getSpecificData(caseId);
             specificValues.moveToFirst();
 
-            caseNum.setText(caseno);
+            caseNum.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_ID)));
             name.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_NAME)));
             age.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_AGE)));
             sex.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_SEX)));
@@ -129,7 +131,7 @@ public class ViewCase extends AppCompatActivity {
             advt.setText(specificValues.getString(specificValues.getColumnIndex(DBinfo.SPECIFICS_COLUMN_ADVT)));
         }
         else
-            Toast.makeText(getApplicationContext(), "no case "+ caseno,
+            Toast.makeText(getApplicationContext(), "no case "+ caseId,
                     Toast.LENGTH_SHORT).show();
 
 

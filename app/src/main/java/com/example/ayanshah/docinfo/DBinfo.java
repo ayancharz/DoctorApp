@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 /**
  * Created by Ayan Shah on 1/23/2017.
  */
@@ -15,7 +17,7 @@ public class DBinfo extends SQLiteOpenHelper{
 
     public static final String DATABASE_NAME = "CASEDETAILS.db";
     public static final String CONTACTS_TABLE_NAME = "BasicInfo";
-    public static final String CONTACTS_COLUMN_ID = "id";
+    public static final String CASE_COLUMN_ID = "id";
     public static final String CONTACTS_COLUMN_CASE_NO = "caseno";
     public static final String CASE_COLUMN_NAME = "name";
     public static final String CONTACTS_COLUMN_EMAIL = "email";
@@ -54,13 +56,13 @@ public class DBinfo extends SQLiteOpenHelper{
 
 
     public DBinfo (Context context) {
-        super(context, DATABASE_NAME, null, 3);
+        super(context, DATABASE_NAME, null, 5);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table BasicInfo " + "(id integer primary key, caseno text, name text, email text, address text, age text, sex text, ref text, date text, phone text, complaints text)");
-        db.execSQL("create table SpecificInfo " + "(id integer primary key, caseno text, oeR1 text, oeL1 text, oeR2 text, oeL2 text, oeR3 text, oeL3 text, asR1 text, " +
+        db.execSQL("create table BasicInfo " + "(id integer primary key, name text, email text, address text, age text, sex text, ref text, date text, phone text, complaints text)");
+        db.execSQL("create table SpecificInfo " + "(id integer primary key, oeR1 text, oeL1 text, oeR2 text, oeL2 text, oeR3 text, oeL3 text, asR1 text, " +
                 "asL1 text, asR2 text, asL2 text, asR3 text, asL3 text, asR4 text, asL4 text, asR5 text, asL5 text, slamp text, refug text, fnds text, advt text)");
     }
 
@@ -77,7 +79,7 @@ public class DBinfo extends SQLiteOpenHelper{
         contentValues.put("name", name);
         contentValues.put("phone", phone);
         contentValues.put("email", email);
-        contentValues.put("caseno", caseno);
+
         contentValues.put("address", address);
         contentValues.put("age", age);
         contentValues.put("sex", sex);
@@ -93,7 +95,8 @@ public class DBinfo extends SQLiteOpenHelper{
                                    String slamp, String refug, String fnds, String advt ){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put("caseno",caseno );
+
+
         contentValues.put(SPECIFICS_COLUMN_OER1,oer1 );
         contentValues.put(SPECIFICS_COLUMN_OER2, oer2);
         contentValues.put(SPECIFICS_COLUMN_OER3, oer3);
@@ -124,7 +127,7 @@ public class DBinfo extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getReadableDatabase();
         Log.d("tag",caseno);
 
-        Cursor values = db.rawQuery(" select * from BasicInfo where caseno = "+caseno+"", null);
+        Cursor values = db.rawQuery(" select * from BasicInfo where id = "+caseno+"", null);
         //values.moveToFirst();
         //Log.d("tag3", values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_NAME)));
         return values;
@@ -134,9 +137,20 @@ public class DBinfo extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getReadableDatabase();
         Log.d("tagX",caseno);
 
-        Cursor values = db.rawQuery(" select * from SpecificInfo where caseno = "+caseno+"", null);
+        Cursor values = db.rawQuery(" select * from SpecificInfo where id = "+caseno+"", null);
         //values.moveToFirst();
         //Log.d("tag3", values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_NAME)));
+        return values;
+    }
+
+    public Cursor getCaseList(String name)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor values = db.rawQuery(" select id,name from BasicInfo where name like '%"+name+"%'",null);
+
+
+
+
         return values;
     }
 

@@ -48,7 +48,7 @@ public class AddCase extends AppCompatActivity {
 
 
         Button add = (Button)findViewById(R.id.csAdd);
-
+        caseNum.setEnabled(false);
         mydb = new DBinfo(this);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,7 +63,13 @@ public class AddCase extends AppCompatActivity {
 
                 Toast.makeText(getApplicationContext(), "done",
                         Toast.LENGTH_SHORT).show();
+
+                finish();
             }
         });
+
+
     }
+
+
 }

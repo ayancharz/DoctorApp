@@ -43,6 +43,8 @@ public class ViewCase extends AppCompatActivity {
     EditText refug;
     EditText fnds;
     EditText advt;
+    EditText history;
+    EditText comments;
 
     Button csAdd;
 
@@ -85,7 +87,8 @@ public class ViewCase extends AppCompatActivity {
         refug = (EditText)findViewById(R.id.reUG);
         fnds = (EditText)findViewById(R.id.fnds);
         advt = (EditText)findViewById(R.id.advTr);
-
+        history = (EditText)findViewById(R.id.history);
+        comments = (EditText)findViewById(R.id.comments);
 
         mydb = new DBinfo(this);
         String caseId = getIntent().getStringExtra("id");
@@ -99,6 +102,7 @@ public class ViewCase extends AppCompatActivity {
             specificValues.moveToFirst();
 
             caseNum.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_ID)));
+            caseNum.setEnabled(false);
             name.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_NAME)));
             age.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_AGE)));
             sex.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_SEX)));
@@ -129,6 +133,9 @@ public class ViewCase extends AppCompatActivity {
             refug.setText(specificValues.getString(specificValues.getColumnIndex(DBinfo.SPECIFICS_COLUMN_REFUG)));
             fnds.setText(specificValues.getString(specificValues.getColumnIndex(DBinfo.SPECIFICS_COLUMN_FNDS)));
             advt.setText(specificValues.getString(specificValues.getColumnIndex(DBinfo.SPECIFICS_COLUMN_ADVT)));
+            history.setText(specificValues.getString(specificValues.getColumnIndex(DBinfo.SPECIFICS_COLUMN_HISTORY)));
+            comments.setText(specificValues.getString(specificValues.getColumnIndex(DBinfo.SPECIFICS_COLUMN_COMMENTS)));
+
         }
         else
             Toast.makeText(getApplicationContext(), "no case "+ caseId,

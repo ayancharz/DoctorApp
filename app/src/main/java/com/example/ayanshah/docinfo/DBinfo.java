@@ -17,7 +17,7 @@ public class DBinfo extends SQLiteOpenHelper{
     public static final String CASE_COLUMN_ID = "id";
     public static final String CONTACTS_COLUMN_CASE_NO = "caseno";
     public static final String CASE_COLUMN_NAME = "name";
-    public static final String CONTACTS_COLUMN_EMAIL = "email";
+    public static final String CASE_COLUMN_EMAIL = "email";
     public static final String CASE_COLUMN_ADDRESS = "address";
     public static final String CASE_COLUMN_AGE = "age";
     public static final String CASE_COLUMN_SEX = "sex";

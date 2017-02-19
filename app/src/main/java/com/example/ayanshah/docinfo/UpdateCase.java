@@ -67,6 +67,7 @@ public class UpdateCase extends AppCompatActivity {
             caseNum.setEnabled(false);
             name.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_NAME)));
             age.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_AGE)));
+            email.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_EMAIL)));
             sex.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_SEX)));
             ref.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_REF)));
             date.setText(values.getString(values.getColumnIndex(DBinfo.CASE_COLUMN_date)));

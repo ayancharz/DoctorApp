@@ -19,6 +19,7 @@ DBinfo dBinfo;
 
         Button searchCase = (Button) findViewById(R.id.searchCase);
         Button addCase = (Button) findViewById(R.id.addCase);
+        Button updateCase = (Button) findViewById(R.id.updateCase);
         dBinfo = new DBinfo(this);
 
         final EditText caseNum = (EditText) findViewById(R.id.caseNum);
@@ -38,16 +39,33 @@ DBinfo dBinfo;
 
                 if(caseNum.getText().toString().equals(""))
                 {
-                    Toast.makeText(getApplicationContext(), "Select a Case Number" ,
+                    Toast.makeText(getApplicationContext(), "Select a Name" ,
                             Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Intent intent = new Intent(getApplicationContext(), SearchList.class);
                     intent.putExtra("name", caseNum.getText().toString());
+                    intent.putExtra("type","add");
                     startActivity(intent);
                 }
             }
         });
 
+        updateCase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(caseNum.getText().toString().equals(""))
+                {
+                    Toast.makeText(getApplicationContext(), "Select a Name" ,
+                            Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent intent = new Intent(getApplicationContext(), SearchList.class);
+                    intent.putExtra("name", caseNum.getText().toString());
+                    intent.putExtra("type","update");
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }

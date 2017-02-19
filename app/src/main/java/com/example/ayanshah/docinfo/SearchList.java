@@ -16,6 +16,7 @@ import java.util.ArrayList;
 public class SearchList extends AppCompatActivity {
     DBinfo db;
     String name;
+    String type;
     public ListView obj;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class SearchList extends AppCompatActivity {
 
         db = new DBinfo(this);
         name = getIntent().getStringExtra("name");
+        type = getIntent().getStringExtra("type");
         Cursor values = db.getCaseList(name);
         values.moveToFirst();
         int count = values.getCount();
@@ -48,9 +50,17 @@ public class SearchList extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                    Intent intent = new Intent(getApplicationContext(), ViewCase.class);
-                    intent.putExtra("id", obj.getItemAtPosition(position).toString());
-                    startActivity(intent);
+                    if(type.equals("add")) {
+                        Intent intent = new Intent(getApplicationContext(), ViewCase.class);
+                        intent.putExtra("id", obj.getItemAtPosition(position).toString());
+                        startActivity(intent);
+                    }else if (type.equals("update")){
+                        Intent intent = new Intent(getApplicationContext(), UpdateCase.class);
+                        intent.putExtra("id", obj.getItemAtPosition(position).toString());
+                        startActivity(intent);
+                    }
+                    else
+                        Toast.makeText(getApplicationContext(),"ERROR",Toast.LENGTH_LONG).show();
 
                 }
             });

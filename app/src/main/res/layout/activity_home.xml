@@ -10,15 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ayanshah.docinfo.Home">
 
-    <Button
-        android:text="Search Case"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="74dp"
-        android:id="@+id/searchCase" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,8 +26,27 @@
         android:text="Add Case"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="55dp"
         android:id="@+id/addCase"
-        android:layout_below="@+id/searchCase"
+        android:layout_below="@+id/updateCase"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Search Case"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:id="@+id/searchCase"
+        android:layout_below="@+id/caseNum"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:id="@+id/updateCase"
+        android:layout_below="@+id/searchCase"
+        android:layout_alignRight="@+id/addCase"
+        android:layout_alignEnd="@+id/addCase" />
 </RelativeLayout>

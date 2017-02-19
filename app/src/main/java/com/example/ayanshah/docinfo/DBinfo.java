@@ -76,7 +76,8 @@ public class DBinfo extends SQLiteOpenHelper{
         db.execSQL(upgradequery);
     }
 
-    public boolean insertCase (String caseno, String name, String email, String address, String age,String sex, String ref, String date, String phone, String complaints ) {
+    public boolean insertCase (String caseno, String name, String email, String address, String age,
+                               String sex, String ref, String date, String phone, String complaints ) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);
@@ -93,7 +94,8 @@ public class DBinfo extends SQLiteOpenHelper{
         return true;
     }
 
-    public boolean insertSpecifics(String caseno, String oer1, String oer2, String oer3, String oel1, String oel2, String oel3, String asr1, String asr2, String asr3,
+    public boolean insertSpecifics(String caseno, String oer1, String oer2, String oer3, String oel1,
+                                   String oel2, String oel3, String asr1, String asr2, String asr3,
                                    String asr4, String asr5, String asl1, String asl2, String asl3, String asl4, String asl5,
                                    String slamp, String refug, String fnds, String advt, String history, String comments ){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -123,6 +125,61 @@ public class DBinfo extends SQLiteOpenHelper{
         contentValues.put(SPECIFICS_COLUMN_HISTORY, history);
         contentValues.put(SPECIFICS_COLUMN_COMMENTS, comments);
         db.insert("SpecificInfo", null, contentValues);
+
+        return true;
+    }
+
+
+    public boolean updateCase(String caseno, String name, String email, String address, String age,
+                               String sex, String ref, String date, String phone, String complaints)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("phone", phone);
+        contentValues.put("email", email);
+
+        contentValues.put("address", address);
+        contentValues.put("age", age);
+        contentValues.put("sex", sex);
+        contentValues.put("ref", ref);
+        contentValues.put("date", date);
+        contentValues.put("complaints", complaints);
+        db.update("BasicInfo", contentValues,"id = ?",new String[] {caseno});
+        return true;
+    }
+
+    public boolean updateSpecifics(String caseno, String oer1, String oer2, String oer3, String oel1,
+                                   String oel2, String oel3, String asr1, String asr2, String asr3,
+                                   String asr4, String asr5, String asl1, String asl2, String asl3, String asl4, String asl5,
+                                   String slamp, String refug, String fnds, String advt, String history, String comments ){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+
+        contentValues.put(SPECIFICS_COLUMN_OER1,oer1 );
+        contentValues.put(SPECIFICS_COLUMN_OER2, oer2);
+        contentValues.put(SPECIFICS_COLUMN_OER3, oer3);
+        contentValues.put(SPECIFICS_COLUMN_OEL1, oel1);
+        contentValues.put(SPECIFICS_COLUMN_OEL2, oel2 );
+        contentValues.put(SPECIFICS_COLUMN_OEL3, oel3);
+        contentValues.put(SPECIFICS_COLUMN_ASL1, asl1);
+        contentValues.put(SPECIFICS_COLUMN_ASL2, asl2);
+        contentValues.put(SPECIFICS_COLUMN_ASL3, asl3);
+        contentValues.put(SPECIFICS_COLUMN_ASL4, asl4);
+        contentValues.put(SPECIFICS_COLUMN_ASL5, asl5);
+        contentValues.put(SPECIFICS_COLUMN_ASR1, asr1);
+        contentValues.put(SPECIFICS_COLUMN_ASR2, asr2);
+        contentValues.put(SPECIFICS_COLUMN_ASR3, asr3);
+        contentValues.put(SPECIFICS_COLUMN_ASR4, asr4);
+        contentValues.put(SPECIFICS_COLUMN_ASR5, asr5);
+        contentValues.put(SPECIFICS_COLUMN_SLAMP, slamp);
+        contentValues.put(SPECIFICS_COLUMN_REFUG, refug);
+        contentValues.put(SPECIFICS_COLUMN_ADVT, advt);
+        contentValues.put(SPECIFICS_COLUMN_FNDS, fnds);
+        contentValues.put(SPECIFICS_COLUMN_HISTORY, history);
+        contentValues.put(SPECIFICS_COLUMN_COMMENTS, comments);
+        db.update("SpecificInfo", contentValues, "id = ?", new String[]{caseno });
 
         return true;
     }

@@ -2,20 +2,23 @@ package com.example.ayanshah.docinfo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddCase extends AppCompatActivity {
     private DBinfo mydb;
+    private int caseNumInt=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_case);
 
-        final EditText caseNum = (EditText) findViewById(R.id.caseNum);
+        final TextView caseNum = (TextView) findViewById(R.id.caseNum);
         final EditText name = (EditText) findViewById(R.id.name);
         final EditText email = (EditText) findViewById(R.id.email);
         final EditText address = (EditText) findViewById(R.id.address);
@@ -50,11 +53,20 @@ public class AddCase extends AppCompatActivity {
         final EditText comments = (EditText) findViewById(R.id.comments);
 
         Button add = (Button) findViewById(R.id.csAdd);
-        caseNum.setEnabled(false);
         mydb = new DBinfo(this);
+        try {
+            caseNumInt = mydb.getCaseNum();
+        }
+        catch (Exception exe){
+
+        }
+        caseNum.setText(String.valueOf(caseNumInt));
+      
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("Debug","The caseNum"+caseNum.getText().toString());
+
                 mydb.insertCase(caseNum.getText().toString(), name.getText().toString(), email.getText().toString(), address.getText().toString(), age.getText().toString(), sex.getText().toString()
                         , ref.getText().toString(), date.getText().toString(), phone.getText().toString(), complaints.getText().toString());
 

@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabaseLockedException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 /**
@@ -210,10 +211,15 @@ public class DBinfo extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor values = db.rawQuery(" select id,name from BasicInfo where name like '%"+name+"%'",null);
 
-
-
-
         return values;
+    }
+    public int getCaseNum(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor values = db.rawQuery(" select * from BasicInfo order by id DESC LIMIT 1",null);
+        values.moveToFirst();
+        int caseNum = values.getInt(values.getColumnIndex(DBinfo.CASE_COLUMN_ID));
+        Log.d("Debug","Casenum gen : "+caseNum);
+        return caseNum+1;
     }
 
 

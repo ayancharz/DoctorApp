@@ -38,22 +38,33 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/name"
-            android:layout_below="@+id/caseNum"
-            android:layout_alignLeft="@+id/caseNum"
-            android:layout_alignStart="@+id/caseNum"
+            android:layout_below="@+id/caseNumLayout"
+            android:layout_alignLeft="@+id/caseNumLayout"
+            android:layout_alignStart="@+id/caseNumLayout"
             android:hint="Name" />
-
-            <EditText
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/caseNumLayout"
+                android:paddingBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:ems="4"
+                    android:text="Case Id :"/>
+            <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
+                android:textSize="20dp"
             android:id="@+id/caseNum"
-            android:hint="Case Number"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
-
+            </LinearLayout>
             <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
